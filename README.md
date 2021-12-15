@@ -23,15 +23,15 @@ The Amazon dataset contains the following attributes:
 
 ## Exploratory Data Analysis
 
-In this section, we checked several characteristics of the data such as the data types, summary statistics, and distributions. For example, the distribution of the ratings is displayed below: 
+In this section, I checked several characteristics of the data such as the data types, summary statistics, and distributions. For example, the distribution of the ratings is displayed below: 
 
 ![Screen Shot 2021-11-29 at 5 17 40 PM](https://user-images.githubusercontent.com/88220704/143957871-448778f3-4ed0-4144-af29-ab048a4892ec.png)
 
 ## Data Preparation
 
-We then took a subset of the dataset by only keeping users who have given 50 or more datings in order to make the dataset less sparse and easy to work with. After creating an interaction matrix of products and users based on ratings we saw that the data is still highly sparse since the current number of ratings is just 0.17% of the possible number of ratings. 
+I then took a subset of the dataset by only keeping users who have given 50 or more datings in order to make the dataset less sparse and easy to work with. After creating an interaction matrix of products and users based on ratings I saw that the data is still highly sparse since the current number of ratings is just 0.17% of the possible number of ratings. 
 
-After exploring and preprocessing the data, it is time to build the recommendation systems. In this project, we decided to make three different types of recommendation models. 
+After exploring and preprocessing the data, it was time to build the recommendation systems. In this project, I decided to make three different types of recommendation models. 
 
 1. **Rank based Recommendation System**
 2. **Collaborative Filtering based Recommendation System**
@@ -39,14 +39,14 @@ After exploring and preprocessing the data, it is time to build the recommendati
 
 ## Rank based Recommendation System
 
-In this section, we designed a function that gets the top products based on highest average rating and minimum number interactions. This system is a based on popularity, and does not take into account individual preferences. Using this function, we then tested it by recommending products to users.
+In this section, I created a function that gets the top products based on highest average rating and minimum number interactions. This system is a based on popularity, and does not take into account individual preferences. Using this function, I then tested it by recommending products to users.
 
 ## Collaborative Filtering based Recommendation System** 
 
-Collaborative filtering incorporates similarities between users and items simultaneously to provide recommendations. Thus, collaborative filtering models can recommend an item to user A based on the interests of a similar user B. We created a function that finds the **similarity scores** between users and then created another function to recommend products to a specific user based on these similarity scores. 
+Collaborative filtering incorporates similarities between users and items simultaneously to provide recommendations. Thus, collaborative filtering models can recommend an item to user A based on the interests of a similar user B. I created a function that finds the **similarity scores** between users and then created another function to recommend products to a specific user based on these similarity scores. 
 
 ## Model based Collaborative Filtering: Singular Value Decomposition
 
-Singular value decomposition is a linear algebra technique to break down a matrix into the product of a few smaller matrices. The application of SVD is best when there is a large sparse matrix, which is the case with our data. We first specified the number of latent features to predict the rating of products, and then we regenerated the original matrix to obtain the predicted ratings for all users and products. After that, we created a function to recommend products to the users based on the predicted ratings for each product. Finally, we evaluated the performance of the model by comparing the average actual ratings to the average predicted ratings, obtaining a RMSE (Root Mean Square Error) value of 0.0137
+Singular value decomposition is a linear algebra technique to break down a matrix into the product of a few smaller matrices. The application of SVD is best when there is a large sparse matrix, which is the case with this data. I first specified the number of latent features to predict the rating of products, and then I regenerated the original matrix to obtain the predicted ratings for all users and products. After that, I created a function to recommend products to the users based on the predicted ratings for each product. Finally, I evaluated the performance of the model by comparing the average actual ratings to the average predicted ratings, obtaining a RMSE (Root Mean Square Error) value of 0.0137
 
 
